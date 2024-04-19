@@ -1,10 +1,11 @@
 from nodo import Nodo
 from listaSimple import ListaSimple
 from listaDoble import ListaDoble
+from listaDobleCircular import ListaDobleCircular as ListaCircular
 
 
 def main():
-    ejemploListaDoble()
+    ejemploListaCircular()
 
 
 def ejemploListaSimple():
@@ -54,6 +55,26 @@ def ejemploListaDoble():
 
     print("Buscar 30:", lista.buscar(30))
     print("Buscar 75:", lista.buscar(75))
+
+
+def ejemploListaCircular():
+    lista = ListaCircular()
+    # lista.recorrer_inicio()
+
+    lista.agregar_inicio(100)
+    lista.agregar_inicio(200)
+    # lista.recorrer_inicio()
+    lista.agregar_final(250)
+    lista.agregar_inicio(300)
+    lista.agregar_final(400)
+    print("Elementos de la lista circular")
+    lista.recorrer_inicio()
+    # lista.recorrer_fin()
+    # lista.recorrer(7)
+    print("Eliminaciones")
+    for _ in range(lista.tamanio):
+        lista.eliminar_final()
+        lista.recorrer_inicio()
 
 
 def nodos():
