@@ -2,10 +2,11 @@ from nodo import Nodo
 from listaSimple import ListaSimple
 from listaDoble import ListaDoble
 from listaDobleCircular import ListaDobleCircular as ListaCircular
+from pila import Pila
 
 
 def main():
-    ejemploListaCircular()
+    ejemploPila()
 
 
 def ejemploListaSimple():
@@ -81,6 +82,21 @@ def ejemploListaCircular():
     lista.eliminar(0)
 
     lista.recorrer_inicio()
+
+
+def ejemploPila():
+    pila = Pila()
+    print("Cima: ", pila.consultar(), pila.tamanio)
+
+    pila.apilar(10)  # 10
+    pila.apilar(20)  # 10 -> 20
+    pila.apilar(30)  # 10 -> 20 -> 30
+
+    pila.recorrer()
+    print("Cima: ", pila.consultar(), pila.tamanio)
+    pila.desapilar()
+    pila.recorrer()
+    print("❌" if pila.esta_vacia() else "✅")
 
 
 def nodos():
