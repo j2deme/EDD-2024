@@ -71,10 +71,16 @@ def ejemploListaCircular():
     lista.recorrer_inicio()
     # lista.recorrer_fin()
     # lista.recorrer(7)
-    print("Eliminaciones")
-    for _ in range(lista.tamanio):
-        lista.eliminar_final()
-        lista.recorrer_inicio()
+    # print("Eliminaciones")
+    # for _ in range(lista.tamanio):
+    #    lista.eliminar_final()
+    #    lista.recorrer_inicio()
+    lista.agregar(500, 2)
+    lista.eliminar(5)
+    lista.agregar(600, 4)
+    lista.eliminar(0)
+
+    lista.recorrer_inicio()
 
 
 def nodos():
