@@ -1,4 +1,5 @@
 from listaDoble import ListaDoble
+from nodoDoble import NodoDoble
 
 
 class ListaDobleCircular(ListaDoble):
@@ -14,6 +15,26 @@ class ListaDobleCircular(ListaDoble):
         super().agregar_inicio(valor)
         self.cabeza.anterior = self.cola
         self.cola.siguiente = self.cabeza
+
+    def agregar(self, valor, posicion):
+        if posicion < 0 or posicion > self.tamanio:
+            return False
+
+        if posicion == 0:
+            self.agregar_inicio(valor)
+        elif posicion == self.tamanio:
+            self.agregar_final(valor)
+        else:
+            nuevo = NodoDoble(valor)
+            actual = self.cabeza
+            for _ in range(posicion):
+                actual = actual.siguiente
+            nuevo.anterior = actual.anterior
+            nuevo.siguiente = actual
+            actual.anterior.siguiente = nuevo
+            actual.anterior = nuevo
+            self.tamanio += 1
+            return True
 
     def recorrer_inicio(self):
         actual = self.cabeza
@@ -67,4 +88,21 @@ class ListaDobleCircular(ListaDoble):
             self.cabeza.anterior = self.cola  # Cabeza a penúltimo
 
         self.tamanio -= 1
+        return True
+
+    def eliminar(self, posicion):
+        if posicion < 0 or posicion >= self.tamanio:
+            return False
+
+        if posicion == 0:
+            return self.eliminar_inicio()
+        elif posicion == self.tamanio - 1:
+            return self.eliminar_final()
+        else:
+            actual = self.cabeza
+            for _ in range(posicion):
+                actual = actual.siguiente
+            actual.anterior.siguiente = actual.siguiente
+            actual.siguiente.anterior = actual.anterior
+            self.tamanio -= 1
         return True
