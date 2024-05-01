@@ -3,10 +3,11 @@ from listaSimple import ListaSimple
 from listaDoble import ListaDoble
 from listaDobleCircular import ListaDobleCircular as ListaCircular
 from pila import Pila
+from cola import Cola
 
 
 def main():
-    ejemploPila()
+    ejemploCola()
 
 
 def ejemploListaSimple():
@@ -97,6 +98,25 @@ def ejemploPila():
     pila.desapilar()
     pila.recorrer()
     print("❌" if pila.esta_vacia() else "✅")
+
+# Ejemplo de cola simple
+
+
+def ejemploCola():
+    cola = Cola()
+    print("Tamaño: {}, Frente: {}".format(cola.size(), cola.consultar()))
+
+    cola.encolar("Martín")
+    cola.encolar("Mario")
+    cola.encolar("Rigo")
+    print("Tamaño: {}, Frente: {}".format(cola.size(), cola.consultar()))
+    cola.desencolar()
+    cola.recorrer_inicio()
+    cola.encolar("Dani")
+    print("Esta vacía?", "✅" if cola.esta_vacia() else "❌")
+    for i in range(cola.size() + 1):
+        cola.recorrer_inicio()
+        cola.desencolar()
 
 
 def nodos():
