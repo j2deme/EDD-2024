@@ -105,4 +105,6 @@ class ListaDoble:
             if actual.valor == valor:
                 return True
             actual = actual.siguiente
+            if actual == self.cabeza or actual is None:
+                break
         return False
