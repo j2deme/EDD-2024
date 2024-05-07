@@ -6,14 +6,35 @@ def main():
 
 
 def ejemploArbolBinario():
-    arbolVacio = ArbolBinario()
+    # arbolVacio = ArbolBinario()
     arbolRaiz = ArbolBinario(10)
 
-    arbolVacio.insertar(5)
-    arbolVacio.insertar(7)
+    # arbolVacio.insertar(5)
+    # arbolVacio.insertar(7)
 
+    arbolRaiz.insertar(8)
+    arbolRaiz.insertar(20)
     arbolRaiz.insertar(5)
+    arbolRaiz.insertar(9)
+    arbolRaiz.insertar(23)
     arbolRaiz.insertar(15)
+
+    print("Preorden")
+    arbolRaiz.preorden()
+
+    print("Inorden")
+    arbolRaiz.inorden()
+
+    print("Postorden")
+    arbolRaiz.postorden()
+
+    arbolRaiz.insertar(17)
+    arbolRaiz.insertar(7)
+
+    print("===")
+    print("15 esta en el árbol:", arbolRaiz.buscar(15))
+    print("7 esta en el árbol:", arbolRaiz.buscar(7))
+    print(f"Anchura: {arbolRaiz.anchura()}\tAltura: {arbolRaiz.altura()}")
 
 
 if __name__ == "__main__":
