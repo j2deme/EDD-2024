@@ -13,7 +13,7 @@ class Cola(ListaDoble):
 
     def consultar(self):
         if self.cabeza is not None:
-            return self.cabeza.valor
+            return self.cabeza  # .valor
 
         return None
 
