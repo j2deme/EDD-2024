@@ -1,4 +1,4 @@
-from nodo import Nodo
+from estructuras.nodo import Nodo
 
 
 class ListaSimple:

@@ -1,4 +1,4 @@
-from arbol_binario import ArbolBinario
+from estructuras.arbol_binario import ArbolBinario
 
 
 def main():
@@ -30,6 +30,10 @@ def ejemploArbolBinario():
 
     arbolRaiz.insertar(17)
     arbolRaiz.insertar(7)
+    arbolRaiz.insertar(24)
+    arbolRaiz.insertar(22)
+    arbolRaiz.insertar(8)
+    arbolRaiz.insertar(4)
 
     print("===")
     print("15 esta en el árbol:", arbolRaiz.buscar(15))

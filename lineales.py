@@ -1,9 +1,9 @@
-from nodo import Nodo
-from listaSimple import ListaSimple
-from listaDoble import ListaDoble
-from listaDobleCircular import ListaDobleCircular as ListaCircular
-from pila import Pila
-from cola import Cola
+from estructuras.nodo import Nodo
+from estructuras.listaSimple import ListaSimple
+from estructuras.listaDoble import ListaDoble
+from estructuras.listaDobleCircular import ListaDobleCircular as ListaCircular
+from estructuras.pila import Pila
+from estructuras.cola import Cola
 
 
 def main():

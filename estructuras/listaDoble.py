@@ -1,4 +1,4 @@
-from nodoDoble import NodoDoble
+from estructuras.nodoDoble import NodoDoble
 
 
 class ListaDoble:

@@ -1,4 +1,5 @@
-from nodo_binario import NodoBinario
+from estructuras.nodo_binario import NodoBinario
+from estructuras.cola import Cola
 
 
 class ArbolBinario:
