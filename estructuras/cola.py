@@ -9,7 +9,9 @@ class Cola(ListaDoble):
         super().agregar_final(valor)
 
     def desencolar(self):
+        cabeza = self.consultar()
         super().eliminar_inicio()
+        return cabeza
 
     def consultar(self):
         if self.cabeza is not None:
