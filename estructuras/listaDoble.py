@@ -119,3 +119,14 @@ class ListaDoble:
                 break
         hijos = hijos[:-1]  # Elimina la última coma
         return str(hijos)
+
+    def __iter__(self):
+        self.actual = self.cabeza
+        return self
+
+    def __next__(self):
+        if self.actual is None:
+            raise StopIteration
+        valor = self.actual.valor
+        self.actual = self.actual.siguiente
+        return valor
