@@ -1,7 +1,7 @@
 from estructuras.nodo import Nodo
-from estructuras.listaSimple import ListaSimple
-from estructuras.listaDoble import ListaDoble
-from estructuras.listaDobleCircular import ListaDobleCircular as ListaCircular
+from estructuras.lista_simple import ListaSimple
+from estructuras.lista_doble import ListaDoble
+from estructuras.lista_doble_circular import ListaDobleCircular as ListaCircular
 from estructuras.pila import Pila
 from estructuras.cola import Cola
 

@@ -1,4 +1,4 @@
-from estructuras.listaDoble import ListaDoble
+from estructuras.lista_doble import ListaDoble
 
 
 class Cola(ListaDoble):

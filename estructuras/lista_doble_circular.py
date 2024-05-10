@@ -1,5 +1,5 @@
-from estructuras.listaDoble import ListaDoble
-from estructuras.nodoDoble import NodoDoble
+from estructuras.lista_doble import ListaDoble
+from estructuras.nodo_doble import NodoDoble
 
 
 class ListaDobleCircular(ListaDoble):
