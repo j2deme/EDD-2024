@@ -108,3 +108,6 @@ class ArbolBinario:
         if nodo is None:
             return 0
         return max(self.__anchura(nodo.izquierdo), self.__anchura(nodo.derecho)) + 1
+
+    def __str__(self):
+        return str(self.raiz)

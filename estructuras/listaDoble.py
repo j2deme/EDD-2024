@@ -108,3 +108,14 @@ class ListaDoble:
             if actual == self.cabeza or actual is None:
                 break
         return False
+
+    def __str__(self):
+        hijos = ""
+        actual = self.cabeza
+        while actual:
+            hijos += str(actual.valor) + ","
+            actual = actual.siguiente
+            if actual == self.cabeza or actual is None:
+                break
+        hijos = hijos[:-1]  # Elimina la última coma
+        return str(hijos)
