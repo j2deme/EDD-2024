@@ -1,15 +1,16 @@
-class NodoBinario:
-    def __init__(self, valor):
-        self.valor = valor
-        self.izquierdo = None
-        self.derecho = None
+from estructuras.nodo_doble import NodoDoble
 
-    def __str__(self):
+
+class NodoBinario(NodoDoble):
+    def __init__(self, valor):
+        super().__init__(valor)
+
+    def conexiones(self):
         if self.izquierdo is not None and self.derecho is not None:
-            return f'({self.izquierdo} <- {self.valor} -> {self.derecho})'
+            return f'({self.izquierdo.valor} <- {self.valor} -> {self.derecho.valor})'
         elif self.izquierdo is not None:
-            return f'({self.izquierdo} <- {self.valor})'
+            return f'({self.izquierdo.valor} <- {self.valor})'
         elif self.derecho is not None:
-            return f'({self.valor} -> {self.derecho})'
+            return f'({self.valor} -> {self.derecho.valor})'
         else:
             return str(self.valor)
