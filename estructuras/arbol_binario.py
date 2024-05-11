@@ -101,13 +101,56 @@ class ArbolBinario:
             return 0
         return 1 + max(self.__altura(nodo.izquierdo), self.__altura(nodo.derecho))
 
-    def anchura(self):
-        return self.__anchura(self.raiz)
+    def anchura(self, nodo=None, debug=False):
+        if nodo is None:
+            return self.__anchura(self.raiz, debug=debug)
+        else:
+            return self.__anchura(nodo, debug=debug)
 
-    def __anchura(self, nodo):
+    def __anchura(self, nodo, debug=False):
         if nodo is None:
             return 0
-        return max(self.__anchura(nodo.izquierdo), self.__anchura(nodo.derecho)) + 1
+
+        cola = Cola()
+        cola.encolar(nodo)
+
+        max_nivel_ancho = 0
+        nivel_ancho = 1  # Anchura de la raíz
+        nivel = 1
+
+        while cola.esta_vacia() is False:
+            # Procesa todos los nodos en el nivel actual (ancho)
+            if debug:
+                print(f"Nivel: {nivel}\tAncho: {nivel_ancho}")
+
+            cola.recorrer_inicio()
+
+            for _ in range(nivel_ancho):
+                if cola.esta_vacia():  # Si la cola está vacía,
+                    break
+
+                actual = cola.desencolar()  # Obtiene el primer nodo de la cola
+                if debug:
+                    print(actual.conexiones())
+
+                # Agregar hijos a la cola para el siguiente nivel
+                if actual.izquierdo:
+                    cola.encolar(actual.izquierdo)
+                if actual.derecho:
+                    cola.encolar(actual.derecho)
+
+                if debug:
+                    print("Hijos encolados:", cola.size())
+
+            # Actualizar max_nivel_ancho si el nivel actual tiene más nodos
+            if cola.size() > max_nivel_ancho:
+                max_nivel_ancho = cola.size()
+
+            # Calcula el ancho para el siguiente nivel
+            nivel_ancho = cola.size() if cola else 0
+            nivel += 1
+
+        return max_nivel_ancho
 
     def __str__(self):
         return str(self.raiz)
