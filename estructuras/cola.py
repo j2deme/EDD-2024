@@ -15,9 +15,9 @@ class Cola(ListaDoble):
 
     def consultar(self):
         if self.cabeza is not None:
-            return self.cabeza  # .valor
-
-        return None
+            return self.cabeza.valor
+        else:
+            return None
 
     def esta_vacia(self):
         return self.cabeza is None
