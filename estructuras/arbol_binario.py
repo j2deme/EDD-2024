@@ -24,6 +24,8 @@ class ArbolBinario:
         else:
             self.__insertar(self.raiz, nuevo_nodo)
 
+        self.tamanio += 1
+
     def __insertar(self, nodo, nuevo_nodo):
         if nuevo_nodo.valor < nodo.valor:
             if nodo.izquierdo is None:
@@ -39,6 +41,7 @@ class ArbolBinario:
     def eliminar(self, valor):
         if self.raiz is not None:
             self.raiz = self.__eliminar(self.raiz, valor)
+            self.tamanio -= 1
 
     def __eliminar(self, nodo, valor):
         if nodo is None:
