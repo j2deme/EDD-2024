@@ -19,26 +19,27 @@ def ejemploArbolBinario():
     arbolRaiz.insertar(23)
     arbolRaiz.insertar(15)
 
-    print("Preorden")
+    '''print("Preorden")
     arbolRaiz.preorden()
 
     print("Inorden")
     arbolRaiz.inorden()
 
     print("Postorden")
-    arbolRaiz.postorden()
+    arbolRaiz.postorden()'''
 
     arbolRaiz.insertar(17)
     arbolRaiz.insertar(7)
     arbolRaiz.insertar(24)
     arbolRaiz.insertar(22)
-    arbolRaiz.insertar(8)
     arbolRaiz.insertar(4)
 
     print("===")
     print("15 esta en el árbol:", arbolRaiz.buscar(15))
     print("7 esta en el árbol:", arbolRaiz.buscar(7))
-    print(f"Anchura: {arbolRaiz.anchura()}\tAltura: {arbolRaiz.altura()}")
+    print(f"Anchura: {arbolRaiz.anchura(debug=True)}"
+          f"\tAltura: {arbolRaiz.altura()}")
+
 
 
 if __name__ == "__main__":
